@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 void main() {
   runApp(MyApp());
@@ -71,9 +72,13 @@ Future<List<Morty>> _getMortys() async {
           builder: (BuildContext context, AsyncSnapshot snapshot){
 
             if(snapshot.data == null){
-              return Container(
-                child: Center(
-                  child: Text("Loading...")
+              return Scaffold(
+                backgroundColor: Colors.blue,
+                body: Center(
+                  child: SpinKitRotatingCircle(
+                    color: Colors.white,
+                    size: 50.0,
+                  ),
                   )
               );
             }
@@ -131,8 +136,8 @@ final String status;
 final String type;
 final String species;
 final String gender;
-List orgin;
-List locationName;
+List<String> orgin;
+List<String> locationName;
 final String image;
 
 Morty(this.index, this.name, this.status, this.type, this.species, this.gender, this.orgin, this.locationName, this.image);
