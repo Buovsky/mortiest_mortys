@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -123,7 +124,66 @@ class DetailPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(morty.name),
       ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Container(
+
+              alignment: AlignmentDirectional.center,
+              margin: EdgeInsets.only(top: 40) ,
+              child: ClipOval(child: Image.network(morty.image,
+              fit: BoxFit.cover,
+              width: 300),
+              ) 
+            ),
+            Container(
+              alignment: AlignmentDirectional.centerStart,
+              margin: EdgeInsets.only(left: 20),
+              child: RichText(
+                text: TextSpan(
+                  style: GoogleFonts.alatsi(),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: " Species: ",
+                      style: TextStyle(fontSize: 30, color: Colors.black.withOpacity(1.0), height: 2),
+                    ),
+                    TextSpan(
+                      text: morty.species,
+                      style: TextStyle(fontSize: 25, color: Colors.black.withOpacity(0.7), fontWeight: FontWeight.bold),
+                    ),
+                    TextSpan(
+                      text: "\n Status: ",
+                      style: TextStyle(fontSize: 30, color: Colors.black.withOpacity(1.0), height: 2),
+                    ),
+                    TextSpan(
+                      text: morty.status,
+                      style: TextStyle(fontSize: 25, color: Colors.black.withOpacity(0.7), fontWeight: FontWeight.bold),
+                    ),
+                    TextSpan(
+                      text: "\n Gender: ",
+                      style: TextStyle(fontSize: 30, color: Colors.black.withOpacity(1.0), height: 2),
+                    ),
+                    TextSpan(
+                      text: morty.gender,
+                      style: TextStyle(fontSize: 25, color: Colors.black.withOpacity(0.7), fontWeight: FontWeight.bold),
+                    ),
+                    TextSpan(
+                      text: "\n Type: ",
+                      style: TextStyle(fontSize: 30, color: Colors.black.withOpacity(1.0), height: 2),
+                    ),
+                    TextSpan(
+                      text: morty.type,
+                      style: TextStyle(fontSize: 25, color: Colors.black.withOpacity(0.7), fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              )
+
+            )
+          ],
+        ),
       
+      )
     );
   }
 }
