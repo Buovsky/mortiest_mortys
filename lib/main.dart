@@ -46,7 +46,7 @@ Future<List<Morty>> _getMortys() async {
 
   for(var u in jsonData){
 
-    Morty morty = Morty(u["index"], u["name"], u["status"], u["type"], u["gender"], u["orginName"], u["locationName"], u["image"]);
+    Morty morty = Morty(u["index"], u["name"], u["status"], u["type"], u["species"], u["gender"], u["orgin"], u["locationName"], u["image"]);
 
     mortys.add(morty);
 
@@ -89,6 +89,7 @@ Future<List<Morty>> _getMortys() async {
                     ),
                   ),
                   title: Text(snapshot.data[index].name),
+                  subtitle: Text(snapshot.data[index].species),
                 );
 
               },
@@ -107,12 +108,12 @@ final int index;
 final String name;
 final String status;
 final String type;
+final String species;
 final String gender;
-final String orginName;
-final String locationName;
+List orgin;
+List locationName;
 final String image;
 
-Morty(this.index, this.name, this.status, this.type, this.gender, this.orginName, this.locationName, this.image);
-
+Morty(this.index, this.name, this.status, this.type, this.species, this.gender, this.orgin, this.locationName, this.image);
 
 }
