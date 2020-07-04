@@ -1,16 +1,23 @@
-# mortiest_mortys
+# Mortiest Mortys
 
-A new Flutter project.
+Hey, you want to have basic knowledge about what:
+ * Name, 
+ * Status,
+ * Gender, 
+ * Type,
+ 
+Has every Morty in Rick and Morty show?
 
-## Getting Started
+![morty_im_in](https://i.pinimg.com/736x/f9/00/26/f900268df5b8b61a2546a83a95fcb208.jpg)
 
-This project is a starting point for a Flutter application.
+## Project contains:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ * Syncing data with Rick and Morty API (https://rickandmortyapi.com),
+ * Displaying results using List View,
+ * More info about Mortys in Detail Page.
+ 
+![list_view](https://github.com/Buovsky/mortiest_mortys/blob/master/screenshoots/screen_listView1.png?raw=true)
+![detail_page](https://github.com/Buovsky/mortiest_mortys/blob/master/screenshoots/screen_detailPage1.png?raw=true)
+ 
+ ### Copyright
+ *Rick and Morty is created by Justin Roiland and Dan Harmon for Adult Swim. The data and images are used without claim of ownership and belong to their respective owners.*
