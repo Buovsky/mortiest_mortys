@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 Future<List<Morty>> _getMortys() async {
 
-  var data = await http.get("https://rickandmortyapi.com/api/character/2,14,18,21,27,42,43,44,53,61,73,77,83,84,85,95,113,118,123,143,152,200,206,209,217,229,231,232,233,234,235,298,325,359,360,366,392,401,473,474,475,476,480,499,505,512,518");
+  var data = await http.get("https://rickandmortyapi.com/api/character/2,14,18,21,27,42,43,44,53,61,73,77,83,84,85,95,113,118,123,143,152,200,206,209,217,229,231,232,233,234,235,298,325,359,360,366,392,473,474,475,476,480,499,505,518");
   
   var jsonData = json.decode(data.body);
 
@@ -46,7 +46,7 @@ Future<List<Morty>> _getMortys() async {
 
   for(var u in jsonData){
 
-    Morty morty = Morty(u["index"], u["name"], u["status"], u["type"], u["gender"], u["orginName"], u["locationName"], u["picture"]);
+    Morty morty = Morty(u["index"], u["name"], u["status"], u["type"], u["gender"], u["orginName"], u["locationName"], u["image"]);
 
     mortys.add(morty);
 
@@ -83,6 +83,11 @@ Future<List<Morty>> _getMortys() async {
               itemBuilder: (BuildContext context, int index){
 
                 return ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                      snapshot.data[index].image
+                    ),
+                  ),
                   title: Text(snapshot.data[index].name),
                 );
 
@@ -105,9 +110,9 @@ final String type;
 final String gender;
 final String orginName;
 final String locationName;
-final String picture;
+final String image;
 
-Morty(this.index, this.name, this.status, this.type, this.gender, this.orginName, this.locationName, this.picture);
+Morty(this.index, this.name, this.status, this.type, this.gender, this.orginName, this.locationName, this.image);
 
 
 }
