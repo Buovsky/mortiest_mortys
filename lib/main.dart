@@ -90,6 +90,11 @@ Future<List<Morty>> _getMortys() async {
                   ),
                   title: Text(snapshot.data[index].name),
                   subtitle: Text(snapshot.data[index].species),
+                  onTap: (){
+                    Navigator.push(context, 
+                    new MaterialPageRoute(builder: (context) => DetailPage(snapshot.data[index]))
+                    );
+                  }
                 );
 
               },
@@ -100,6 +105,22 @@ Future<List<Morty>> _getMortys() async {
     ),
   );
 }
+}
+
+class DetailPage extends StatelessWidget {
+  final Morty morty;
+
+  DetailPage(this.morty);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(morty.name),
+      ),
+      
+    );
+  }
 }
 
 class Morty{
