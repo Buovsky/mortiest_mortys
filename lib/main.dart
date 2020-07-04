@@ -54,6 +54,8 @@ Future<List<Morty>> _getMortys() async {
 
   print(mortys.length);
 
+  return mortys;
+
 }
 
   @override
